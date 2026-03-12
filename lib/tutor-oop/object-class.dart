@@ -1,17 +1,14 @@
-class BungaSederhana {
-    double? pokok;
-    double? sukuBunga;
-    double? waktu;
+class Laptop {
+    String? merk;
+    int? harga;
 
-    double bunga(){
-        return (pokok! * sukuBunga! * waktu!) / 100;
+    // konstruktor
+    Laptop(){
+        print("Ini adalah konstruktor default");
     }
 }
 
 void main(){
-    BungaSederhana bungaSederhana = BungaSederhana();
-    bungaSederhana.pokok = 1000;
-    bungaSederhana.sukuBunga = 10;
-    bungaSederhana.waktu = 2;
-    print("Bunga Sederhana adalah ${bungaSederhana.bunga()}.");
+    //disini laptop adalah objek dari kelas Laptop
+    Laptop laptop = Laptop();
 }
