@@ -1,25 +1,23 @@
-class Student {
+class Mobile {
     String? name;
-    int? age;
-    int? rollNumber;
+    String? color;
+    int? prize;
 
-    //default constructor
-    Student(){
-        print("This is a default constructor");
-    }
+    Mobile(this.name, this.color, this.prize);
 
-    //named constuctor
-    Student.namedConstructor(String name, int age, int rollNumber){
-        this.name = name;
-        this.age = age;
-        this.rollNumber = rollNumber;
+    //disini Mobile() adalah named constructor
+    Mobile.namedConstructor(this.name, this.color, [this.prize=0]);
+
+    void displayMobileDetails(){
+        print("Mobile name: $name.");
+        print("Mobile color: $color.");
+        print("Mobile prize: $prize\n");
     }
 }
 
 void main(){
-    //disini student adalah object dari class Student
-    Student student = Student.namedConstructor("John", 20, 1);
-    print("Name: ${student.name}");
-    print("Age: ${student.age}");
-    print("Roll Number: ${student.rollNumber}");
+    var mobile1 = Mobile("Samsung", "Black",20000);
+    mobile1.displayMobileDetails();
+    var mobile2 = Mobile.namedConstructor("Apple", "White");
+    mobile2.displayMobileDetails();
 }
