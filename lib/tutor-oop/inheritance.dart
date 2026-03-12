@@ -1,35 +1,37 @@
-class Mobil {
-    // Property
-    String? nama;
-    double? harga;
+class Bangun {
+  // Properties
+  double? diameter1;
+  double? diameter2;
 }
 
-class Tesla extends Mobil {
-    // Method untuk menampilkan nilai dari property
-    void tampil() {
-        print("Nama: ${nama}");
-        print("Harga: ${harga}");
-    }
+class Lingkaran extends Bangun {
+  // Method untuk menghitung luas lingkaran
+  double luas() {
+    return 3.14 * diameter1! * diameter2!;
+  }
 }
 
-class Model3 extends Tesla {
-    // Property
-    String? warna;
-
-    // Method untuk menampilkan nilai dari property
-    void tampil() {
-        super.tampil();
-        print("Warna: ${warna}");
-    }
+class Segitiga extends Bangun {
+  // Method untuk menghitung luas segitiga
+  double luas() {
+    return 0.5 * diameter1! * diameter2!;
+  }
 }
 
 void main() {
-    // Membuat object dari class Model3
-    Model3 m = new Model3();
-    // memberikan nilai ke object
-    m.nama = "Tesla Model 3";
-    m.harga = 50000.00;
-    m.warna = "Merah";
-    // Menampilkan nilai dari object
-    m.tampil();
+  // Membuat object dari class Lingkaran
+  Lingkaran lingkaran = new Lingkaran();
+  // memberikan nilai diameter ke object
+  lingkaran.diameter1 = 10.0;
+  lingkaran.diameter2 = 20.0;
+  // Tampilkan luas dari lingkaran
+  print("Luas lingkaran: ${lingkaran.luas()}");
+
+  // Membuat object dari class Segitiga
+  Segitiga segitiga = new Segitiga();
+  // memberikan nilai ke object
+  segitiga.diameter1 = 10.0;
+  segitiga.diameter2 = 20.0;
+  // Tampilkan luas segigita
+  print("Luas segitiga: ${segitiga.luas()}");
 }
