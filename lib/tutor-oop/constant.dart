@@ -1,23 +1,16 @@
-class Point {
-    final int x;
-    final int y;
+class Student {
+    final String? name;
+    final int? age;
+    final int? rollNumber;
 
-    const Point(this.x, this.y);
+    //Constant Constructor
+    const Student({this.name, this.age, this.rollNumber});
 }
 
 void main(){
-    //p1 dan p2 memiliki kode hash yang sama
-    Point p1 = const Point(1, 2);
-    print("Kode hash p1 adalah: ${p1.hashCode}");
-
-    Point p2 = const Point(1, 2);
-    print("Kode hash p2 adalah: ${p2.hashCode}");
-
-    // tanpa menggunakan const
-    // ini memiliki kode hash yang berbeda
-    Point p3 = Point(2, 2);
-    print("Kode hash p3 adalah: ${p3.hashCode}");
-
-    Point p4 = Point(2, 2);
-    print("Kode hash p4 adalah: ${p4.hashCode}");
+    //disini student adalah object dari class Student
+    const Student student = Student(name: "Budi", age: 28, rollNumber: 1);
+    print("Name: ${student.name}");
+    print("Age: ${student.age}");
+    print("Roll Number: ${student.rollNumber}");
 }
