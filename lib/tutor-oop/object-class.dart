@@ -1,15 +1,17 @@
-class PersegiPanjang {
-    double? panjang;
-    double? lebar;
+class BungaSederhana {
+    double? pokok;
+    double? sukuBunga;
+    double? waktu;
 
-    double area(){
-        return panjang! * lebar!;
+    double bunga(){
+        return (pokok! * sukuBunga! * waktu!) / 100;
     }
 }
 
 void main(){
-    PersegiPanjang persegiPanjang = PersegiPanjang();
-    persegiPanjang.panjang = 10;
-    persegiPanjang.lebar = 5;
-    print("Luas Persegi Panjang adalah ${persegiPanjang.area()}.");
+    BungaSederhana bungaSederhana = BungaSederhana();
+    bungaSederhana.pokok = 1000;
+    bungaSederhana.sukuBunga = 10;
+    bungaSederhana.waktu = 2;
+    print("Bunga Sederhana adalah ${bungaSederhana.bunga()}.");
 }
