@@ -1,23 +1,19 @@
-class Mobil {
-    String? merk;
-    String? model;
-    int? tahun;
+class Hewan {
+    String? nama;
+    int? jumlahKaki;
+    int? umur;
 
-    Mobil(String merk, String model, int tahun){
-        this.merk = merk;
-        this.model = model;
-        this.tahun = tahun;
-    }
-
-    void klakson(){
-        print("Beep! Bepp!");
+    void display(){
+        print("Nama Hewan: $nama");
+        print("Jumlah Kaki: $jumlahKaki");
+        print("Umur: $umur");
     }
 }
 
 void main(){
-    Mobil mobil2 = Mobil("Honda","Civic",2019);
-
-    print(mobil2.merk); //Output: Honda
-    print(mobil2.model); //Output: Civic
-    print(mobil2.tahun); //Output: 2019
+    Hewan hewan = Hewan();
+    hewan.nama = "Singa";
+    hewan.jumlahKaki = 4;
+    hewan.umur = 10;
+    hewan.display();
 }
