@@ -1,20 +1,27 @@
-class Binatang {
-  void makan() {
-    print("Binatang sedang makan");
+class Pegawai{
+  void gaji(){
+    print("Gaji pegawai adalah \$1000.");
   }
 }
 
-class Kucing extends Binatang {
+class Manager extends Pegawai{
   @override
-  void makan() {
-    print("Kucing sedang makan");
+  void gaji(){
+    print("Gaji manager adalah \$2000.");
   }
 }
 
-void main() {
-  Binatang binatang = Binatang();
-  binatang.makan();
+class Developer extends Pegawai{
+  @override
+  void gaji(){
+    print("Gaji developer adalah \$3000.");
+  }
+}
 
-  Kucing kucing = Kucing();
-  kucing.makan();
+void main(){
+  Manager manager=Manager();
+  Developer developer=Developer();
+
+  manager.gaji();
+  developer.gaji();
 }
