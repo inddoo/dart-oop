@@ -1,23 +1,30 @@
-class Mobile {
+class Animal {
     String? name;
-    String? color;
-    int? prize;
+    int? age;
 
-    Mobile(this.name, this.color, this.prize);
+    //default constructor
+    Animal(){
+        print("Ini adalah default constructor");
+    }
 
-    //disini Mobile() adalah named constructor
-    Mobile.namedConstructor(this.name, this.color, [this.prize=0]);
+    //named constructor
+    Animal.namedConstructor(String name, int age){
+        this.name = name;
+        this.age = age;
+    }
 
-    void displayMobileDetails(){
-        print("Mobile name: $name.");
-        print("Mobile color: $color.");
-        print("Mobile prize: $prize\n");
+    //named constructor
+    Animal.namedConstructor2(String name){
+        this.name = name;
     }
 }
 
 void main(){
-    var mobile1 = Mobile("Samsung", "Black",20000);
-    mobile1.displayMobileDetails();
-    var mobile2 = Mobile.namedConstructor("Apple", "White");
-    mobile2.displayMobileDetails();
+    //disini animal adalah object dari class Animal
+    Animal animal = Animal.namedConstructor("Dog", 5);
+    print("Name: ${animal.name}");
+    print("Age: ${animal.age}");
+
+    Animal animal2 = Animal.namedConstructor2("Cat");
+    print("Name: ${animal2.name}");
 }
