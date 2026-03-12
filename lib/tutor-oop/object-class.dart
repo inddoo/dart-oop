@@ -1,14 +1,16 @@
-class Laptop {
-    String? merk;
-    int? harga;
+class Student {
+    String? name;
+    int? age;
+    int? rollNumber;
 
-    // konstruktor
-    Laptop(){
-        print("Ini adalah konstruktor default");
-    }
+    //konstruktor
+    Student(this.name, this.age, this.rollNumber);
 }
 
 void main(){
-    //disini laptop adalah objek dari kelas Laptop
-    Laptop laptop = Laptop();
+    //disini student adalah object dari class Student
+    Student student = Student("John", 20, 1);
+    print("Name: ${student.name}");
+    print("Age: ${student.age}");
+    print("Roll Number: ${student.rollNumber}");
 }
