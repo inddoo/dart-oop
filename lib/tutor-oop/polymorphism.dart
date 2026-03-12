@@ -1,27 +1,28 @@
-class Pegawai{
-  void gaji(){
-    print("Gaji pegawai adalah \$1000.");
-  }
+//membuat class abstract beserta method abstract
+abstract class Kendaraan {
+  void jalankan();
+  void berhenti();
 }
 
-class Manager extends Pegawai{
+//implementasi class abstract
+class Mobil extends Kendaraan {
   @override
-  void gaji(){
-    print("Gaji manager adalah \$2000.");
+  void jalankan() {
+    print('Mobil mulai bergerak.');
   }
-}
 
-class Developer extends Pegawai{
   @override
-  void gaji(){
-    print("Gaji developer adalah \$3000.");
+  void berhenti() {
+    print('Mobil berhenti.');
   }
 }
 
-void main(){
-  Manager manager=Manager();
-  Developer developer=Developer();
+//menggunakan class abstract
+void main() {
+  // Membuat object dari class nyata Mobil
+  Kendaraan mobil = Mobil();
 
-  manager.gaji();
-  developer.gaji();
+  // Memanggil method dari kelas abstract
+  mobil.jalankan();
+  mobil.berhenti();
 }
