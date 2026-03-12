@@ -1,19 +1,15 @@
-class Hewan {
-    String? nama;
-    int? jumlahKaki;
-    int? umur;
+class PersegiPanjang {
+    double? panjang;
+    double? lebar;
 
-    void display(){
-        print("Nama Hewan: $nama");
-        print("Jumlah Kaki: $jumlahKaki");
-        print("Umur: $umur");
+    double area(){
+        return panjang! * lebar!;
     }
 }
 
 void main(){
-    Hewan hewan = Hewan();
-    hewan.nama = "Singa";
-    hewan.jumlahKaki = 4;
-    hewan.umur = 10;
-    hewan.display();
+    PersegiPanjang persegiPanjang = PersegiPanjang();
+    persegiPanjang.panjang = 10;
+    persegiPanjang.lebar = 5;
+    print("Luas Persegi Panjang adalah ${persegiPanjang.area()}.");
 }
