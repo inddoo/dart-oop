@@ -1,35 +1,24 @@
-class Employee {
-  // property private
-  int? _id;
-  String? _name;
+class Vehicle {
+  String _model;
+  int _year;
 
-// Method getter untuk mengakses property private _id
-  int getId() {
-    return _id!;
-  }
-// Method getter untuk mengakses property private _name
-  String getName() {
-    return _name!;
-  }
-// Method setter untuk meng-update property private _id
-  void setId(int id) {
-    this._id = id;
-  }
-// Method setter untuk meng-update property private _name
-  void setName(String name) {
-    this._name = name;
-  }
+  // Getter method
+  String get model => _model;
 
+  // Setter method
+  set model(String model) => _model = model;
+
+  // Getter method
+  int get year => _year;
+
+  // Setter method
+  set year(int year) => _year = year;
 }
 
 void main() {
-  // Membuat object dari class Employee
-  Employee employee = new Employee();
-  // Memberi nilai ke object menggunakan setter
-  employee.setId(1);
-  employee.setName("John");
-
-  // Menerima nilai dari object menggunakan getter
-  print("Id: ${employee.getId()}");
-  print("Name: ${employee.getName()}");
+  var vehicle = Vehicle();
+  vehicle.model = "Toyota";
+  vehicle.year = 2019;
+  print(vehicle.model);
+  print(vehicle.year);
 }
