@@ -1,37 +1,21 @@
-class Bangun {
-  // Properties
-  double? diameter1;
-  double? diameter2;
-}
+// Parent Class
+class Binatang {
+  String jenis;
 
-class Lingkaran extends Bangun {
-  // Method untuk menghitung luas lingkaran
-  double luas() {
-    return 3.14 * diameter1! * diameter2!;
+  Binatang(this.jenis);
+
+  void bersuara() {
+    print('Sebuah binatang dari jenis $jenis bersuara.');
   }
 }
 
-class Segitiga extends Bangun {
-  // Method untuk menghitung luas segitiga
-  double luas() {
-    return 0.5 * diameter1! * diameter2!;
+// Child Class yang mewarisi dari Binatang
+class Kucing extends Binatang {
+  String jenisBulu;
+
+  Kucing(String jenis, this.jenisBulu) : super(jenis);
+
+  void tidur() {
+    print('Kucing tidur dengan nyenyak.');
   }
-}
-
-void main() {
-  // Membuat object dari class Lingkaran
-  Lingkaran lingkaran = new Lingkaran();
-  // memberikan nilai diameter ke object
-  lingkaran.diameter1 = 10.0;
-  lingkaran.diameter2 = 20.0;
-  // Tampilkan luas dari lingkaran
-  print("Luas lingkaran: ${lingkaran.luas()}");
-
-  // Membuat object dari class Segitiga
-  Segitiga segitiga = new Segitiga();
-  // memberikan nilai ke object
-  segitiga.diameter1 = 10.0;
-  segitiga.diameter2 = 20.0;
-  // Tampilkan luas segigita
-  print("Luas segitiga: ${segitiga.luas()}");
 }
