@@ -1,30 +1,33 @@
-class Animal {
+import 'dart:convert';
+
+class Person {
     String? name;
     int? age;
 
-    //default constructor
-    Animal(){
-        print("Ini adalah default constructor");
+    Person(this.name, this.age);
+
+    Person.fromJson(Map<String, dynamic> json){
+        name = json['name'];
+        age = json['age'];
     }
 
-    //named constructor
-    Animal.namedConstructor(String name, int age){
-        this.name = name;
-        this.age = age;
-    }
-
-    //named constructor
-    Animal.namedConstructor2(String name){
-        this.name = name;
+    Person.fromJsonString(String jsonString){
+        Map<String, dynamic> json = jsonDecode(jsonString);
+        name = json['name'];
+        age = json['age'];
     }
 }
 
 void main(){
-    //disini animal adalah object dari class Animal
-    Animal animal = Animal.namedConstructor("Dog", 5);
-    print("Name: ${animal.name}");
-    print("Age: ${animal.age}");
+    //disini person adalah object dari class Person
+    String jsonString1 = '{"name": "Agus", "age": 20}';
+    String jsonString2 = '{"name": "Budi", "age": 25}';
 
-    Animal animal2 = Animal.namedConstructor2("Cat");
-    print("Name: ${animal2.name}");
+    Person p1 = Person.fromJsonString(jsonString1);
+    print("Person 1 name: ${p1.name}");
+    print("Person 1 age: ${p1.age}\n");
+
+    Person p2 = Person.fromJsonString(jsonString2);
+    print("Person 2 name: ${p2.name}");
+    print("Person 2 age: ${p2.age}");
 }
